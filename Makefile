@@ -4,7 +4,7 @@ DATE := $(shell date +%F)
 BASENAME := $(HOSTNAME)/$(DATE)
 
 details := lscpu cpuinfo dmi-modalias cpu-modalias uname-r uname-v uname-m detect-virt cmdline
-benchmarks := cpu-st cpu-mt-2 cpu-mt-4 cpu-mt-8
+benchmarks := cpu-st cpu-mt-2 cpu-mt-4 cpu-mt-8 memory
 
 .phony: $(BASENAME)
 $(BASENAME): $(foreach x,$(details) $(benchmarks),$(BASENAME)/$x)
@@ -60,3 +60,7 @@ $(BASENAME): $(foreach x,$(details) $(benchmarks),$(BASENAME)/$x)
 %/cpu-mt-8:
 	mkdir -p "$*"
 	sysbench cpu --threads=8 run > "$@"
+
+%/memory:
+	mkdir -p "$*"
+	sysbench memory run > "$@"
