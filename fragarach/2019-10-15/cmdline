@@ -1,0 +1,1 @@
+BOOT_IMAGE=/vmlinuz-5.2.0-0.bpo.2-amd64 root=/dev/mapper/fragarach-root ro quiet mitigations=auto,nosmt splash zswap.enabled=1
