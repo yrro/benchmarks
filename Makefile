@@ -3,7 +3,7 @@ DATE := $(shell date +%F)
 
 BASENAME := $(HOSTNAME)/$(DATE)
 
-details := lscpu cpuinfo dmi-modalias cpu-modalias uname-r uname-v uname-m detect-virt cmdline
+details := lscpu cpuinfo dmi-modalias cpu-modalias uname-r uname-v uname-m detect-virt cmdline os-release
 benchmarks := cpu-st cpu-mt-2 cpu-mt-4 cpu-mt-8 memory-st memory-mt-2 memory-mt-4 memory-mt-8
 
 .phony: $(BASENAME)
@@ -44,6 +44,10 @@ $(BASENAME): $(foreach x,$(details) $(benchmarks),$(BASENAME)/$x)
 %/cmdline:
 	mkdir -p "$*"
 	</proc/cmdline tr ' ' '\n' > "$@"
+
+%/os-release:
+	mkdir -p "$*"
+	cp /etc/os-release "$@"
 
 %/cpu-st:
 	mkdir -p "$*"
