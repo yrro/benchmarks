@@ -43,7 +43,7 @@ $(BASENAME): $(foreach x,$(details) $(benchmarks),$(BASENAME)/$x)
 
 %/cmdline:
 	mkdir -p "$*"
-	cp /proc/cmdline "$@"
+	</proc/cmdline tr ' ' '\n' > "$@"
 
 %/cpu-st:
 	mkdir -p "$*"
