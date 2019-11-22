@@ -1,0 +1,4 @@
+BOOT_IMAGE=/vmlinuz-5.3.0-2-amd64
+root=UUID=9bcd181d-2bed-4c40-b8d6-5348a349aa4f
+ro
+single
