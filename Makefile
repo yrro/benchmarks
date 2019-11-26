@@ -51,32 +51,32 @@ $(BASENAME): $(foreach x,$(details) $(benchmarks),$(BASENAME)/$x)
 
 %/cpu-st:
 	mkdir -p "$*"
-	sysbench cpu run > "$@"
+	sysbench --time=30 cpu run > "$@"
 
 %/cpu-mt-2:
 	mkdir -p "$*"
-	sysbench cpu --threads=2 run > "$@"
+	sysbench --time=30 cpu --threads=2 run > "$@"
 
 %/cpu-mt-4:
 	mkdir -p "$*"
-	sysbench cpu --threads=4 run > "$@"
+	sysbench --time=30 cpu --threads=4 run > "$@"
 
 %/cpu-mt-8:
 	mkdir -p "$*"
-	sysbench cpu --threads=8 run > "$@"
+	sysbench --time=30 cpu --threads=8 run > "$@"
 
 %/memory-st:
 	mkdir -p "$*"
-	sysbench memory run > "$@"
+	sysbench --time=30 memory run > "$@"
 
 %/memory-mt-2:
 	mkdir -p "$*"
-	sysbench memory --threads=2 run > "$@"
+	sysbench --time=30 memory --threads=2 run > "$@"
 
 %/memory-mt-4:
 	mkdir -p "$*"
-	sysbench memory --threads=4 run > "$@"
+	sysbench --time=30 memory --threads=4 run > "$@"
 
 %/memory-mt-8:
 	mkdir -p "$*"
-	sysbench memory --threads=8 run > "$@"
+	sysbench --time=30 memory --threads=8 run > "$@"
