@@ -1,0 +1,11 @@
+BOOT_IMAGE=(hd0,gpt2)/vmlinuz-5.3.11-300.fc31.x86_64
+root=/dev/mapper/fedora_localhost--live-root
+ro
+resume=/dev/mapper/fedora_localhost--live-swap
+rd.lvm.lv=fedora_localhost-live/root
+rd.luks.uuid=luks-6e0ad211-a6e0-4c2e-b64a-e9da6cf02a9c
+rd.lvm.lv=fedora_localhost-live/swap
+rhgb
+quiet
+i915.enable_guc=3
+i915.enable_fbc=1
