@@ -1,0 +1,7 @@
+BOOT_IMAGE=/vmlinuz-5.3.0-3-amd64
+root=/dev/mapper/fragarach-root
+ro
+quiet
+i8042.debug
+splash
+zswap.enabled=1
