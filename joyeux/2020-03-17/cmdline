@@ -1,0 +1,8 @@
+BOOT_IMAGE=/vmlinuz-5.4.0-0.bpo.3-amd64
+root=/dev/mapper/joyeux-root
+ro
+quiet
+log_buf_len=1M
+splash
+swapaccount=1
+zswap.enabled=1
